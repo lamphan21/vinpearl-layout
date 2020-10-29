@@ -1,0 +1,1196 @@
+/* GLOBAL */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'IBM Plex Serif', serif;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100%;
+    background-color: #E4E4E4;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.613);
+    box-shadow: 0 3px 6px #60606047;
+    z-index: 10;
+    position: fixed;
+}
+.header {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+}
+.header .logo-brand {
+    width: 100px;
+    height: 100px;
+    padding-top: 15px;
+    float: left;
+}
+.header .logo-brand img {
+    width: 100%;
+    height: 80%;
+}
+.header .header-nav {
+    float: right;
+    margin-top: 40px;
+    color: #313131;
+    font-weight: bold;
+}
+.header .header-nav ul {
+    list-style-type: none;
+}
+.header .header-nav ul li {
+    float: left;
+    margin-left: 50px;
+    position: relative;
+}
+.header .header-nav a {
+    color: #313131;
+    text-decoration: none;
+}
+.header .header-nav ul li i {
+    font-size: 30px;
+    margin-top: -5px;
+}
+.header .header-nav .user-icon a {
+    display: block;
+    width: 50px;
+    margin-left: 30px;
+}
+.header-nav li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 10%;
+    margin-bottom: -10px;
+    background-color: #BF9D62;
+    box-shadow: 0 5px 10px#BF9D62;
+    transition: all 0.3s ease-in;
+}
+.header-nav li:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 10%;
+    margin-bottom: -10px;
+    background-color: #BF9D62;
+    box-shadow: 0 5px 10px#DECDC3;
+}
+
+
+/* BOOKING */
+.booking {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+}
+.booking .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #313131;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.booking:hover .overlay {
+    opacity: 0.5;
+}
+.booking_img, img {
+    width: 100%;
+    height: 100%;
+}
+.booking_form {
+    width: 1200px;
+    height: 70px;
+    background-color: #313131a7;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.booking_form .destination ,.calendar {
+    width: 300px;
+    height: 100%;
+    /* border: 1px solid #BF9D62; */
+    float: left;
+}
+.destination {
+    position: relative;
+}
+.destination::after , .calendar::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 1.5px;
+    height: 50px;
+    background-color: #BF9D62;
+}
+.destination form {
+    width: 100%;
+    height: 100%;
+}
+.destination .icon {
+    float: left;
+    color: white;
+    padding-left: 15px;
+}
+.destination label {
+    display: inline-block;
+    width: 10%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.destination input {
+    width: 85%;
+    height: 100%;
+    float: right;
+    font-size: 18px;
+    background: none;
+    font-weight: 600;
+    color: white;
+    outline: none;
+}
+.destination input::-webkit-input-placeholder {
+    color: white;
+}
+.destination .arrow {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    padding-top: 25px;
+    text-align: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    /* transform: translate(-50%,-50%); */
+}
+
+.calendar {
+    position: relative;
+}
+.calendar form {
+    width: 100%;
+    height: 100%;
+}
+.calendar .icon {
+    float: left;
+    color: white;
+    padding-left: 15px;
+}
+.calendar label {
+    display: inline-block;
+    width: 10%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.calendar input {
+    width: 85%;
+    height: 100%;
+    float: right;
+    font-size: 18px;
+    background: none;
+    font-weight: 600;
+    color: white;
+    outline: none;
+}
+.calendar input::-webkit-input-placeholder {
+    color: white;
+}
+.calendar .arrow {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    padding-top: 25px;
+    text-align: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    /* transform: translate(-50%,-50%); */
+}
+
+.booking_form .room {
+    width: 350px;
+    height: 100%;
+    /* border: 1px solid #BF9D62; */
+    float: left;
+    position: relative;
+}
+.booking_form .room::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 1.5px;
+    height: 50px;
+    background-color: #BF9D62;
+}
+
+
+.room form {
+    width: 100%;
+    height: 100%;
+}
+.room .icon {
+    float: left;
+    color: white;
+    padding-left: 15px;
+}
+.room label {
+    display: inline-block;
+    width: 10%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.room input {
+    width: 85%;
+    height: 100%;
+    float: right;
+    font-size: 18px;
+    background: none;
+    font-weight: 600;
+    color: white;
+    outline: none;
+}
+.room input::-webkit-input-placeholder {
+    color: white;
+}
+.room .arrow {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    padding-top: 25px;
+    text-align: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    /* transform: translate(-50%,-50%); */
+}
+
+.booking_form input {
+    border: none;
+}
+
+.booking_form .check {
+    width: 250px;
+    height: 100%;
+    /* background-color: #BF9D62; */
+    float: left;
+}
+.booking_form .check button {
+    width: 100%;
+    height: 100%;
+    background: none;
+    font-size: 18px;
+    border: none;
+    color: #BF9D62;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.booking_form .check button:hover {
+    background-color: #BF9D62;
+    color: white;
+}
+
+.booking .card {
+    position: absolute;
+    text-align: center;
+    color: white;
+    width: 580px;
+    height: 252px;
+    padding: 30px 20px;
+    background-color: #313131b8;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.4s;
+    opacity: 0;
+}
+.booking .card h1 {
+    font-size: 30px;
+    margin: 15px;
+}
+.booking .card button {
+    width: 150px;
+    height: 45px;
+    border: 1px solid #BF9D62;
+    background: none;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #BF9D62;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.booking .card button:hover {
+    color: white;
+    background-color: #BF9D62;
+}
+.booking:hover .card {
+    top: 50%;
+    opacity: 1;
+}
+.flight img {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    animation-name: flight;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.booking:hover .flight img {
+    opacity: 1;
+}
+
+@keyframes flight {
+    0%{
+        left: 0;
+        transform: rotate(-25deg);
+    }
+    /* 60%{
+        top: 90%;
+        left: 40%;
+        transform: rotate(-30deg);
+    } */
+    100%{
+        top: 80%;
+        left: 100%;
+        transform: rotate(8deg)
+    }
+}
+
+
+
+
+/* DESTINATIONS */
+.our_desti {
+    width: 100%;
+    margin: 60px 0;
+    color: #313131;
+    text-align: center;
+    height: 550px;
+}
+.our_desti h2 {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 50px;
+}
+
+.desti_container {
+    margin: 0 auto;
+    width: 1200px;
+}
+.desti_container .desti_card {
+    width: 230px;
+    height: 320px;
+    /* height: 465px; */
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px #31313125;
+    padding: 20px 30px;
+    overflow: hidden;
+    transition: all 0.4s;
+    float: left;
+    justify-content: space-between;
+}
+.desti_container .desti_card .title_card {
+    font-size: 16px;
+    width: 100%;
+    height: 50px;
+}
+.desti_container .desti_card:hover {
+    height: 465px;
+    margin-top: -20px;
+    box-shadow: 0 3px 15px #31313192;
+}
+.desti_container .desti_card h3 {
+    padding-bottom: 10px;
+}
+.desti_container .desti_card hr {
+    width: 50%;
+    height: 1px;
+    border: none;
+    margin: 0 auto;
+    background-color: #BF9D62;
+}
+.desti_container .desti_card .card_img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 15px auto;
+}
+.desti_card .city_list ul {
+    list-style-type: none;
+}
+.desti_card .city_list ul li {
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 5px;
+}
+.desti_card .city_list ul li a {
+    text-decoration: none;
+    color: #313131;
+    float: left;
+}
+.desti_card .city_list ul li span {
+    float: right;
+}
+.desti_card .city_list ul li span i {
+    padding-right: 10px;
+}
+.desti_card {
+    margin-right: 12px;
+}
+.desti_container .last {
+    margin-right: 0;
+}
+.our_desti button {
+    width: 190px;
+    height: 45px;
+    background: none;
+    border: 1px solid #BF9D62;
+    border-radius: 5px;
+    color: #BF9D62;
+    font-size: 16px;
+    margin: 30px auto;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.our_desti button:hover {
+    border: none;
+    background-color: #BF9D62;
+    color: white;
+}
+
+
+/* OFFERS */
+.offers {
+    width: 1200px;
+    height: 650px;
+    margin: 0 auto;
+    position: relative;
+}
+.offers h2 {
+    float: left;
+}
+.offers button {
+    width: 190px;
+    height: 45px;
+    background: none;
+    border: 1px solid #BF9D62;
+    border-radius: 5px;
+    color: #BF9D62;
+    font-size: 16px;
+    transition: all 0.4s;
+    cursor: pointer;
+    float: right;
+}
+.offers button:hover {
+    border: none;
+    background-color: #BF9D62;
+    color: white;
+}
+.offers_card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.offers_card:hover .overlay {
+    opacity: 0.5;
+}
+.offers_container {
+    width: 1100px;
+    height: 475px;
+    margin: 50px auto;
+}
+.offers_container .offers_card {
+    width: 345px;
+    height: 475px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px #31313149;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-right: 30px;
+    /* border: 1px solid black; */
+}
+.offers_container .offers_card .last {
+    margin-right: 0 !important;
+}
+.offers_card .offers_img {
+    width: 100%;
+    height: 100%;
+}
+.offers_img img {
+    width: 100%;
+    height: 100%;
+}
+.offers_card .offers_content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 45%;
+    left: 0;
+    padding: 40px 30px;
+    color: white;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.offers_card:hover .offers_content {
+    top: 25%;
+    opacity: 1;
+}
+.offers_card h3 {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 67%;
+    transform: translate(-50%,-50%);
+    margin: 30px 0;
+    font-size: 30px;
+    transition: all 0.4s;
+}
+.offers_card:hover h3 {
+    top: 15%;
+}
+.offers_card .offers_content p {
+    padding: 10px 0;
+}
+.offers_card .offers_content .title {
+    font-size: 14px;
+    margin: 30px 0;
+}
+.offers_card .offers_content a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s;
+}
+.offers_card .offers_content a:hover {
+    color: #BF9D62;
+}
+.offers .arrow .left {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+.offers .arrow .right {
+    position: absolute;
+    top: 50%;
+    right: -2%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+
+
+/* NEWS */
+.news {
+    width: 1200px;
+    margin: 30px auto;
+}
+.news h2 {
+    float: left;
+}
+.news_container {
+    width: 1200px;
+    height: 920px;
+    /* background-color: #DECDC3; */
+    margin: 50px auto;
+}
+.news button {
+    width: 190px;
+    height: 45px;
+    background: none;
+    border: 1px solid #BF9D62;
+    border-radius: 5px;
+    color: #BF9D62;
+    font-size: 16px;
+    transition: all 0.4s;
+    cursor: pointer;
+    float: right;
+}
+.news_container .news_left {
+    float: left;
+    width: 590px;
+    height: 920px;
+    margin-right: 20px;
+}
+.news_container .news_left .top  {
+    width: 590px;
+    height: 600px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.news_container .news_left .top .img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.news_container .news_left .top .img img {
+    width: 100%;
+    height: 100%;
+}
+.news_container .news_left .top .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #313131;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.news_container .news_left .top:hover .overlay {
+    opacity: 0.7;
+}
+.news_container .news_left .top .content {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    color: white;
+    transition: all 0.4s;
+    opacity: 0;
+}
+.news_container .news_left .top:hover .content {
+    top: 30%;
+    opacity: 1;
+}
+.news_container .news_left .top .content h3 {
+    font-size: 25px;
+    width: 550px;
+    margin-bottom: 70px;
+    transition: all 0.4s;
+}
+.news_container .news_left .top:hover .content h3 {
+    margin-bottom: 20px;
+}
+.news_container .news_left .top .content .orther {
+    margin: 30px 0;
+}
+.news_container .news_left .top .content .orther p {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 14px;
+    font-weight: 200;
+}
+.news_container .news_left .top .content a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    margin-top: 30px;
+    display: block;
+    transition: all 0.3s;
+}
+.news_container .news_left .content a:hover {
+    color: #BF9D62;
+}
+.news_container .news_left .bottom  {
+    width: 590px;
+    height: 300px;
+    position: relative;
+}
+.news_container .news_left .bottom .img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.news_container .news_left .bottom .img img {
+    width: 100%;
+    height: 100%;
+}
+.news_container .news_left .bottom .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #313131;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.news_container .news_left .bottom:hover .overlay {
+    opacity: 0.7;
+}
+.news_container .news_left .bottom .content {
+    position: absolute;
+    top: 20%;
+    left: 30px;
+    color: white;
+    transition: all 0.4s;
+    opacity: 0;
+}
+.news_container .news_left .bottom:hover .content {
+    top: 10%;
+    opacity: 1;
+}
+.news_container .news_left .bottom .content h3 {
+    font-size: 25px;
+    width: 550px;
+    margin-bottom: 70px;
+    transition: all 0.4s;
+}
+.news_container .news_left .bottom:hover .content h3 {
+    margin-bottom: 20px;
+}
+.news_container .news_left .bottom .content .orther {
+    margin: 30px 0;
+}
+.news_container .news_left .bottom .content .orther p {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 14px;
+    font-weight: 200;
+}
+.news_container .news_left .bottom .content a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    margin-top: 30px;
+    display: block;
+    transition: all 0.3s;
+}
+.news_container .news_left .bottom .content a:hover {
+    color: #BF9D62;
+}
+.news_right {
+    float: right;
+    width: 590px;
+    height: 920px;
+}
+.news_form {
+    width: 590px;
+    height: 300px;
+    background-color: white;
+    box-shadow: 0 3px 10px #60606047;
+    border-radius: 5px;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+}
+.news_form h4  {
+    margin-bottom: 20px;
+    color: #BF9D62;
+}
+.news_form p {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: lighter;
+    font-size: 30px;
+}
+.news_form span {
+    font-size: 14px;
+    font-weight: lighter;
+}
+.news_form form {
+    width: 550px;
+    height: 50px;
+    position: relative;
+    border: 1px solid #BF9D62;
+    margin-top: 40px;
+}
+.news_form form input {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    font-size: 14px;
+    padding-left: 10px;
+    border: none;
+}
+.news_form form button {
+    width: 20%;
+    height: 100%;
+    border: none;
+}
+.news_form form button:hover {
+    background-color: #BF9D62;
+    color: white;
+    border-radius: 0;
+}
+.news_right .news_bottom .bottom {
+    width: 285px;
+    height: 600px;
+    position: relative;
+    float: left;
+    color: white;
+    
+}
+.news_right .news_bottom .bottom .img {
+    width: 100%;
+    height: 100%;
+}
+.news_right .news_bottom .bottom .img img {
+    width: 100%;
+    height: 100%;
+}
+.news_right .news_bottom .bottom .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #313131;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.news_right .news_bottom .bottom:hover .overlay {
+    opacity: 0.7;
+}
+.news_right .news_bottom .bottom .content {
+    position: absolute;
+    top: 40%;
+    left: 20px;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.news_right .news_bottom .bottom:hover .content {
+    top: 25%;
+    opacity: 1;
+}
+.news_right .news_bottom .bottom .content p {
+    margin: 20px 0;
+}
+.news_right .news_bottom .bottom .content a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+.news_right .news_bottom .bottom .content a:hover {
+    color: #BF9D62;
+}
+
+
+
+
+
+/* EXPLORE */
+.explore {
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+}
+.explore p {
+    width: 550px;
+    margin: 40px auto;
+}
+.explore_content {
+    width: 100%;
+    height: 400px;
+    background-image: url(./image/city-night.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+}
+.explore .explore_content .content {
+    width: 590px;
+    height: 325px;
+    background-color: #0000009b;
+    margin: 0 auto;
+    padding: 50px 0;
+    color: white;
+    opacity: 0.7;
+    transition: all 0.4s;
+}
+.explore .explore_content:hover .content {
+    opacity: 1;
+}
+.explore .explore_content .content h1 {
+    font-family: 'IBM Plex Serif', serif;
+    padding-top: 20px;
+    font-size: 30px;
+}
+.explore_content .content button {
+    width: 190px;
+    height: 45px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.explore_content .content button:hover {
+    background-color: #BF9D62;
+    color: white;
+    border: 1px solid #BF9D62;
+}
+
+
+/* FOOTER */
+.footer_top {
+    width: 1200px;
+    height: 330px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+.footer_top h3 {
+    padding: 30px 0;
+}
+.footer_top a {
+    display: block;
+    text-decoration: none;
+    color: #313131;
+    padding-bottom: 20px;
+    transition: all 0.3s;
+}
+.footer_top a:hover {
+    color: #BF9D62;
+}
+.footer_top .contact, .about {
+    width: 320px;
+    float: left;
+    margin-right: 50px;
+}
+.footer_top .about {
+    width: 380px;
+}
+.footer_top .receive {
+    width: 350px;
+    float: right;
+}
+.footer_top .about .item {
+    float: left;
+    margin-right: 60px;
+}
+.last {
+    margin-right: 0 !important;
+}
+.footer_top .receive form {
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+.footer_top .receive input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #BF9D62;
+    background: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+.footer_top .receive label {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 6px;
+    color: #BF9D62;
+    cursor: pointer;
+}
+.footer_bottom {
+    width: 100%;
+    height: 70px;
+    background-color: #313131;
+    padding-top: 15px;
+}
+.bottom_container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+.footer_bottom a {
+    font-family: 'IBM Plex Serif', serif;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    display: block;
+    float: left;
+}
+.footer_bottom .icon_social {
+    float: right;
+    
+}
+.footer_bottom .icon_social i {
+    margin-left: 50px;
+    font-size: 25px;
+    color: white;
+    transition: all 0.3s;
+}
+.footer_bottom .icon_social a:hover i {
+    color: #BF9D62;
+}
+
+
+
+/* CLEAR */
+.clear {
+    clear: both;
+}
+
+
+/* DROPDOWN-NAV */
+.header-nav .menu_drop {
+    position: relative;
+}
+ul.drop-menu {
+    position: absolute;
+    top: 25px;
+    left: -45%;
+    width: 100%;
+    padding: 0;
+  }
+  ul.drop-menu li {
+    background: #313131;
+    width: 130px;
+    font-size: 14px;
+    padding: 20px 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 0 !important;
+    cursor: pointer;
+  }
+  ul.drop-menu li:hover {
+    background: #606060;
+  }
+  ul.drop-menu li:last-child {
+    border-radius: 0px 0px 5px 5px;
+  }
+  
+  ul.drop-menu li {
+    display: none;
+  }
+  
+li:hover > ul.drop-menu li {
+    display: block;
+  }
+li:hover > ul.drop-menu.menu-1 {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+li:hover > ul.drop-menu.menu-1 li {
+    opacity: 0;
+}
+
+li:hover > ul.drop-menu.menu-3 {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+li:hover > ul.drop-menu.menu-3 li {
+    opacity: 0;
+}
+li:hover > ul.drop-menu.menu-3 li:nth-child(1) {
+    -webkit-animation-name: menu3;
+    animation-name: menu3;
+    -webkit-animation-duration: 0ms;
+    animation-duration: 0ms;
+    /* -webkit-animation-delay: 0ms;
+    animation-delay: 0ms; */
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+li:hover > ul.drop-menu.menu-3 li:nth-child(2) {
+    -webkit-animation-name: menu3;
+    animation-name: menu3;
+    -webkit-animation-duration: 150ms;
+    animation-duration: 150ms;
+    /* -webkit-animation-delay: 300ms;
+    animation-delay: 300ms; */
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+li:hover > ul.drop-menu.menu-3 li:nth-child(3) {
+    -webkit-animation-name: menu3;
+    animation-name: menu3;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    /* -webkit-animation-delay: 600ms;
+    animation-delay: 600ms; */
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+li:hover > ul.drop-menu.menu-3 li:nth-child(4) {
+    -webkit-animation-name: menu3;
+    animation-name: menu3;
+    -webkit-animation-duration: 450ms;
+    animation-duration: 450ms;
+    /* -webkit-animation-delay: 900ms;
+    animation-delay: 900ms; */
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+li:hover > ul.drop-menu.menu-3 li:nth-child(5) {
+    -webkit-animation-name: menu3;
+    animation-name: menu3;
+    -webkit-animation-duration: 600ms;
+    animation-duration: 600ms;
+    /* -webkit-animation-delay: 1200ms;
+    animation-delay: 1200ms; */
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+li:hover > ul.drop-menu.menu-3 li:nth-child(6) {
+    -webkit-animation-name: menu3;
+    animation-name: menu3;
+    -webkit-animation-duration: 750ms;
+    animation-duration: 750ms;
+    /* -webkit-animation-delay: 1500ms;
+    animation-delay: 1500ms; */
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+  @keyframes menu3 {
+    0%{
+        opacity: 0;
+        transform: scale(0.3) translateY(-60px);
+    }
+    80% {
+        transform: scale(1.6) translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg) translateY(0);
+    }
+}
